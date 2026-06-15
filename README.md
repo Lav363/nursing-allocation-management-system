@@ -58,34 +58,21 @@ This application is built as a highly scalable, backend-driven platform using in
 
 ---
 
-## 🏗️ System Architecture
+## 🏗 System Architecture
 
 ```mermaid
 graph TD
-    subgraph Client Layer (Port 3000)
-        React[React JS Web App]
-        Axios[Axios HTTP Client]
-    end
 
-    subgraph API Gateway / Server Layer (Port 5000)
-        Express[Express JS Server]
-        JWT[Auth Middleware - JWT]
-        Routes[API Routes - Auth, Nurses, Wards, Shifts, Allocations, Leaves]
-    end
+    A[ReactJS Frontend] --> B[Axios API Client]
 
-    subgraph Database Layer (Port 3006)
-        MySQL[(MySQL Relational DB)]
-    end
+    B --> C[Node.js Express Server]
 
-    React -->|Interactions| Axios
-    Axios -->|REST API Requests + JWT Bearer Token| Express
-    Express --> JWT
-    JWT --> Routes
-    Routes -->|Connection Pool Query| MySQL
+    C --> D[JWT Authentication]
+
+    D --> E[REST API Routes]
+
+    E --> F[(MySQL Database)]
 ```
-
----
-
 ## 🗄️ Database Design & Schema
 
 The MySQL database schema contains the following relational tables:
