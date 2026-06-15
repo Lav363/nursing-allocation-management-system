@@ -245,3 +245,7 @@ We have provided a verification script that validates database connection pool i
 # In the project root folder run:
 node backend/tests/verify.js
 ```
+## 🎥 Project Demo
+
+**Demo Video:**
+[https://drive.google.com/your-link](https://drive.google.com/file/d/1hmADgKor7Pdk1FbEPzVDd2twzFMzpA0w/view?usp=sharing)
